@@ -11,7 +11,7 @@ namespace task_2
         public string Id { get; set; }
         public string Model { get; set; }
 
-        public Robot(string id, string model)
+        public Robot(string model, string id)
         {
             Id = id;
             Model = model;

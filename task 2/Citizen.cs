@@ -12,11 +12,11 @@ namespace task_2
         public string Name { get; set; }
         public int Age { get; set; }
 
-        public Citizen(string id, string name, int age)
+        public Citizen(string name, int age, string id)
         {
             Id = id;
-            Name = name;
             Age = age;
+            Name = name;
         }
         public bool IsViolator(string fakeNumber)
         {
