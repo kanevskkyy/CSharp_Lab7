@@ -8,6 +8,10 @@ class Task
         Console.Write("Enter number what part of task you want to do(1 - uprising, 2 - birth, 3 - hunger) = ");
         int choice = int.Parse(Console.ReadLine());
         Console.Clear();
+        List<Citizen> citizens = new List<Citizen>();
+        List<Robot> robots = new List<Robot>();
+
+
 
         switch (choice)
         {
@@ -15,8 +19,6 @@ class Task
                 Console.WriteLine("Enter information about citizen {name} {age} {id} or about robot {model} {id}");
                 Line();
 
-                List<Citizen> citizens = new List<Citizen>();
-                List<Robot> robots = new List<Robot>();
 
                 while(true)
                 {
@@ -57,6 +59,12 @@ class Task
 
                 break;
 
+
+            case 2:
+
+
+
+                break;
         }
 
 
