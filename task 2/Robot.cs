@@ -6,22 +6,20 @@ using System.Threading.Tasks;
 
 namespace task_2
 {
-    internal class Citizen:IIdentifiable
+    internal class Robot:IIdentifiable
     {
         public string Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
+        public string Model { get; set; }
 
-        public Citizen(string id, string name, int age)
+        public Robot(string id, string model)
         {
             Id = id;
-            Name = name;
-            Age = age;
+            Model = model;
         }
+
         public bool IsViolator(string fakeNumber)
         {
             return Id.EndsWith(fakeNumber);
         }
-
     }
 }
