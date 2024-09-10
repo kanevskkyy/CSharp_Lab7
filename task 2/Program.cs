@@ -140,7 +140,51 @@ class Task
 
                 }
 
+                Line();
+                Console.WriteLine("Now, just enter name who bought food");
+                while (true)
+                {
+                    Console.Write("Enter = ");
+                    string name = Console.ReadLine();
+                    if (name.ToLower() == "end") break;
 
+                    bool isCitizen = false;
+                    
+                    for (int i = 0; i < citizens.Count; i++)
+                    {
+                        if (citizens[i].Name == name) 
+                        {
+                            citizens[i].BuyFood(); 
+                            isCitizen = true;
+                        }
+                    }
+
+                    if (!isCitizen)
+                    {
+                        for (int i = 0; i < rebels.Count; i++) 
+                        {
+                            if (rebels[i].Name == name)
+                            {
+                                rebels[i].BuyFood();
+                            }
+                        }
+                    }
+
+                }
+
+                int totalFood = 0;
+                
+                for(int i = 0; i < citizens.Count; i++)
+                {
+                    totalFood += citizens[i].Food;
+                }
+
+                for (int i = 0; i < rebels.Count; i++)
+                {
+                    totalFood += rebels[i].Food;
+                }
+                Line();
+                Console.WriteLine($"Total bought food = {totalFood}");
 
                 break;
         }
