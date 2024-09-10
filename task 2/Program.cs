@@ -8,10 +8,11 @@ class Task
         Console.Write("Enter number what part of task you want to do(1 - uprising, 2 - birth, 3 - hunger) = ");
         int choice = int.Parse(Console.ReadLine());
         Console.Clear();
+        
         List<Citizen> citizens = new List<Citizen>();
         List<Robot> robots = new List<Robot>();
         List<Pets> pets = new List<Pets>();
-
+        List<Rebel> rebels = new List<Rebel>();
 
         switch (choice)
         {
@@ -111,7 +112,34 @@ class Task
                 break;
 
             case 3:
-                
+                Console.WriteLine("Enter information about citizen like : {name} {age} {id} {birthDay}");
+                Console.WriteLine("Enter information about rebels like : {name} {age} {team}");
+
+                Console.Write("Enter amount of citizen and rebels = ");
+                int amountPeople = int.Parse(Console.ReadLine());
+                Line();
+
+                for(int i = 0; i < amountPeople; i++)
+                {
+                    Console.Write($"Enter information about {i + 1} person = ");
+                    
+                    string[] information = Console.ReadLine().Split();
+                    SameName(information, citizens, rebels);
+                    
+                    if(information.Length == 4)
+                    {
+                        Citizen tempCitizen = new Citizen(information[0], int.Parse(information[1]), information[2], information[3]);
+                        citizens.Add(tempCitizen);
+                    }
+
+                    if(information.Length == 3)
+                    {
+                        Rebel tempRebel = new Rebel(information[0], int.Parse(information[1]), information[2]);
+                        rebels.Add(tempRebel);
+                    }
+
+                }
+
 
 
                 break;
@@ -120,6 +148,40 @@ class Task
 
 
     }
+
+    public static void SameName(string[] information, List<Citizen> citizens, List<Rebel> rebels)
+    {
+        for (int j = 0; j < citizens.Count; j++)
+        {
+            if (citizens[j].Name == information[0])
+            {
+                Console.WriteLine("Name of citizens cannot dublicate!");
+                Environment.Exit(0);
+            }
+        }
+
+        for (int j = 0; j < rebels.Count; j++)
+        {
+            if (rebels[j].Name == information[0])
+            {
+                Console.WriteLine("Name of rebels cannot dublicate!");
+                Environment.Exit(0);
+            }
+        }
+
+        for (int j = 0; j < citizens.Count; j++)
+        {
+            for (int k = 0; k < rebels.Count; k++)
+            {
+                if (citizens[j].Name == rebels[k].Name)
+                {
+                    Console.WriteLine("Name of rebels and citizens cannot be same!");
+                    Environment.Exit(0);
+                }
+            }
+        }
+    }
+
     public static void Line()
     {
         Console.WriteLine("=======================================");
