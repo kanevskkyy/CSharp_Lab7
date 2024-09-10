@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace task_2
 {
-    internal class Citizen:IIdentifiable, IBirthday
+    internal class Citizen:IIdentifiable, IBirthday, IBuyer
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -15,6 +15,7 @@ namespace task_2
         public string Day { get; set; }
         public string Month { get; set; }
         public string Year { get; set; }
+        public int Food { get; set; }
 
         public Citizen(string name, int age, string id)
         {
@@ -34,11 +35,17 @@ namespace task_2
             Day = time[0];
             Month = time[1];
             Year = time[2];
+            Food = 0;
         }
 
         public bool IsViolator(string fakeNumber)
         {
             return Id.EndsWith(fakeNumber);
+        }
+
+        public void BuyFood()
+        {
+            this.Food += 10;
         }
 
     }

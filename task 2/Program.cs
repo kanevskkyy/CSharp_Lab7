@@ -59,7 +59,6 @@ class Task
 
                 break;
 
-
             case 2:
                 Console.WriteLine("Enter information about citizen like : Citizen {name} {age} {id} {birthDay}");
                 Console.WriteLine("Enter information about robot like : Robot {model} {birthDay}");
@@ -107,6 +106,12 @@ class Task
                 {
                     if (pets[i].Year == year) Console.WriteLine($"\t{pets[i].Day}/{pets[i].Month}/{pets[i].Year}");
                 }
+
+
+                break;
+
+            case 3:
+                
 
 
                 break;
