@@ -10,7 +10,7 @@ class Task
         Console.Clear();
         List<Citizen> citizens = new List<Citizen>();
         List<Robot> robots = new List<Robot>();
-
+        List<Pets> pets = new List<Pets>();
 
 
         switch (choice)
@@ -61,6 +61,19 @@ class Task
 
 
             case 2:
+                Console.WriteLine("Enter information about citizen like : Citizen {name} {age} {id} {birthDay}");
+                Console.WriteLine("Enter information about robot like : Robot {model} {birthDay}");
+                Console.WriteLine("Enter information about pet like : Pet {name} {birthDay}");
+                
+                Line();
+                
+                while(true)
+                {
+
+                }
+
+
+
 
 
 
