@@ -8,7 +8,7 @@ namespace task_2
 {
     internal interface IIdentifiable
     {
-        int Id { get; set; }
-        bool IsViolator();
+        string Id { get; set; }
+        bool IsViolator(string fakeNumber);
     }
 }
