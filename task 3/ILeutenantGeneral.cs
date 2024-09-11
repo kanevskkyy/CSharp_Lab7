@@ -8,6 +8,7 @@ namespace task_3
 {
     internal interface ILeutenantGeneral
     {
+        List<int> LeutenatsId { get; set; }
         int Salary { get; set; }
     }
 }

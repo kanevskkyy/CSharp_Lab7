@@ -8,7 +8,7 @@ namespace task_3
 {
     internal class LeuntenantGeneral:Soldier, ILeutenantGeneral
     {
-        public List<int> Leutenats = new List<int>();
+        public List<int> LeutenatsId { get; set; } = new List<int>();
         public int Salary { get; set; }
 
         public LeuntenantGeneral(int id, string name, string surname, int salary) : base(id, name, surname)
