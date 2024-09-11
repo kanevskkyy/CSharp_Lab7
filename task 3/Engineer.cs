@@ -13,7 +13,7 @@ namespace task_3
 
         public Engineer(int id, string name, string surname, string corpus) : base(id, name, surname, corpus) {}
 
-        void NewRepairedThings(string Things, int Time)
+        public void NewRepairedThings(string Things, int Time)
         {
             this.RepairedThings.Add(Things);
             this.TimeToRepair.Add(Time);
