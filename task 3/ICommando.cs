@@ -10,5 +10,7 @@ namespace task_3
     {
         List<string> MissionName { get; set; }
         List<string> MissionStatus { get; set; }
+
+        void addMission(string missionName, string missionStatus);
     }
 }

@@ -14,5 +14,10 @@ namespace task_3
         {
             Salary = salary;
         }
+
+        public override string ToString()
+        {
+            return $"Name : {this.Name} {this.Surname} Id : {this.Id} Salary : {this.Salary:F2}";
+        }
     }
 }

@@ -14,5 +14,10 @@ namespace task_3
         {
             CodeNumber = codeNumber;
         }
+
+        public override string ToString()
+        {
+            return $"Name : {this.Name} {this.Surname} Id : {this.Id}\nCode number : {this.CodeNumber}";
+        }
     }
 }

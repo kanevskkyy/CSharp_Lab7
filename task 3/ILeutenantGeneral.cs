@@ -8,7 +8,9 @@ namespace task_3
 {
     internal interface ILeutenantGeneral
     {
-        List<int> LeutenatsId { get; set; }
+        List<Private> Soldiers { get; set; }
         int Salary { get; set; }
+
+        void AddSoldier(Private soldier);
     }
 }
